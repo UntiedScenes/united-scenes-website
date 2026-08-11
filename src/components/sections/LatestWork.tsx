@@ -13,26 +13,23 @@ const LATEST_WORK = [
 
 export default function LatestWork() {
   return (
-    <section className="bg-neutral-100 text-ink">
-      <div className="container py-24">
-        <Reveal as="h2" className="heading mb-10 text-[clamp(2rem,4vw,3.5rem)]">
+    <section className="dark-shade">
+      <div className="container">
+        <Reveal as="h2" className="heading-4 light">
           latest work
         </Reveal>
 
         <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
           {LATEST_WORK.map((item) => (
             <div key={item.brand} className="group space-y-3">
-              <PlaceholderMedia label={item.brand} />
-              <div className="flex items-center justify-between font-text text-sm">
-                <div className="space-x-2 text-secondary">
+              <PlaceholderMedia label={item.brand} dark />
+              <div className="flex items-center justify-between">
+                <div className="text-6 light space-x-2">
                   {item.hashtags.map((tag) => (
                     <span key={tag}>{tag}</span>
                   ))}
                 </div>
-                <a
-                  href="#"
-                  className="font-subheading text-ink underline underline-offset-2 hover:text-secondary"
-                >
+                <a href="#" className="button-5 light">
                   bekijk meer
                 </a>
               </div>

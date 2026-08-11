@@ -4,38 +4,28 @@ const SOCIALS = ["YouTube", "Instagram", "TikTok", "LinkedIn"];
 
 export default function SiteFooter() {
   return (
-    <footer className="bg-ink text-neutral-50">
-      <div className="container flex flex-col gap-6 py-10 font-text text-sm text-secondary sm:flex-row sm:items-center sm:justify-between">
-        <div className="space-y-1">
+    <footer className="dark">
+      <div className="container flex flex-col gap-6 sm:flex-row sm:items-center sm:justify-between">
+        <div className="text-6 light">
           <p>&copy; {new Date().getFullYear()} Untied Scenes. Alle rechten voorbehouden.</p>
           <p>
             Zusterbedrijf:{" "}
-            <a
-              href="https://untied-marketing.nl"
-              className="underline underline-offset-2 hover:text-neutral-50"
-            >
-              untied-marketing.nl
-            </a>
+            <a href="https://untied-marketing.nl">untied-marketing.nl</a>
           </p>
         </div>
 
         <div className="flex gap-4">
-          <Link href="/privacy" className="hover:text-neutral-50">
+          <Link href="/privacy" className="button-6 light">
             Privacyverklaring
           </Link>
-          <Link href="/voorwaarden" className="hover:text-neutral-50">
+          <Link href="/voorwaarden" className="button-6 light">
             Algemene voorwaarden
           </Link>
         </div>
 
         <div className="flex gap-4">
           {SOCIALS.map((social) => (
-            <a
-              key={social}
-              href="#"
-              className="hover:text-neutral-50"
-              aria-label={social}
-            >
+            <a key={social} href="#" className="button-6 light" aria-label={social}>
               {social}
             </a>
           ))}

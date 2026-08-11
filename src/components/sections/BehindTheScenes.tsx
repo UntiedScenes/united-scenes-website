@@ -20,30 +20,28 @@ const CREW = [
 
 export default function BehindTheScenes() {
   return (
-    <section id="behind-the-scenes" className="bg-ink text-paper">
-      <div className="container py-24">
-        <Reveal as="h2" className="heading mb-10 text-[clamp(2rem,4vw,3.5rem)]">
+    <section id="behind-the-scenes" className="dark">
+      <div className="container">
+        <Reveal as="h2" className="heading-4 light">
           behind the scenes
         </Reveal>
 
-        <div className="mb-16 grid gap-8 sm:grid-cols-2 lg:grid-cols-5">
+        <div className="row mb-16 gap-8">
           {PILLARS.map((pillar) => (
-            <div key={pillar.title} className="space-y-2">
-              <h3 className="font-subheading text-sm lowercase text-accent">
-                {pillar.title}
-              </h3>
-              <p className="font-text text-sm text-secondary">{pillar.description}</p>
+            <div key={pillar.title} className="col w-1/2 sm:w-1/3 lg:w-1/5">
+              <h3 className="heading-8 light text-accent">{pillar.title}</h3>
+              <p className="text-6 light">{pillar.description}</p>
             </div>
           ))}
         </div>
 
-        <h3 className="mb-8 font-subheading text-xl lowercase">meet the crew</h3>
+        <h3 className="heading-5 light">meet the crew</h3>
         <div className="grid gap-6 sm:grid-cols-3 lg:grid-cols-6">
           {CREW.map((member) => (
             <div key={member.name} className="space-y-2 text-center">
               <PlaceholderMedia label={member.name} aspect="aspect-square" dark />
-              <p className="font-subheading text-sm">{member.name}</p>
-              <p className="font-text text-xs text-secondary">{member.role}</p>
+              <p className="text-6 light">{member.name}</p>
+              <p className="text-6 light">{member.role}</p>
             </div>
           ))}
         </div>

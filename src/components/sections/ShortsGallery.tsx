@@ -5,9 +5,9 @@ const SHORTS = Array.from({ length: 9 }, (_, index) => `Short ${index + 1}`);
 
 export default function ShortsGallery() {
   return (
-    <section className="bg-neutral-800 text-paper">
-      <div className="container py-24">
-        <Reveal as="h2" className="heading mb-10 text-[clamp(2rem,4vw,3.5rem)]">
+    <section className="dark-shade">
+      <div className="container">
+        <Reveal as="h2" className="heading-4 light">
           shorts
         </Reveal>
 

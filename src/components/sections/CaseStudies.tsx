@@ -21,9 +21,9 @@ const CASES = [
 
 export default function CaseStudies() {
   return (
-    <section className="bg-paper text-ink">
-      <div className="container py-24">
-        <Reveal as="h2" className="heading mb-10 text-[clamp(2rem,4vw,3.5rem)]">
+    <section className="light">
+      <div className="container">
+        <Reveal as="h2" className="heading-4 dark">
           cases
         </Reveal>
 
@@ -31,15 +31,10 @@ export default function CaseStudies() {
           {CASES.map((item) => (
             <article key={item.title} className="space-y-3">
               <PlaceholderMedia label={item.title} />
-              <p className="font-subheading text-xs uppercase tracking-wide text-secondary">
-                {item.type}
-              </p>
-              <h3 className="font-subheading text-lg lowercase">{item.title}</h3>
-              <p className="font-text text-sm text-secondary">{item.description}</p>
-              <a
-                href="#"
-                className="inline-block font-text text-sm underline underline-offset-2 hover:text-secondary"
-              >
+              <p className="text-6 dark uppercase tracking-wide">{item.type}</p>
+              <h3 className="heading-8 dark">{item.title}</h3>
+              <p className="text-3 dark">{item.description}</p>
+              <a href="#" className="button-6 dark">
                 lees meer
               </a>
             </article>

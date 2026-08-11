@@ -8,7 +8,7 @@ import ShortsGallery from "@/components/sections/ShortsGallery";
 
 export default function Home() {
   return (
-    <div className="flex min-h-screen flex-col">
+    <div className="page flex min-h-screen flex-col">
       <main className="flex-1">
         <Hero />
         <Philosophy />

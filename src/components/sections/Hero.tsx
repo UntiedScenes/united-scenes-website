@@ -4,7 +4,7 @@ import HeroHeadline from "@/components/HeroHeadline";
 
 export default function Hero() {
   return (
-    <section className="relative flex min-h-screen items-center justify-center overflow-hidden bg-ink text-paper">
+    <section className="dark relative flex min-h-screen items-center justify-center overflow-hidden py-0">
       <div className="absolute inset-0 -z-10">
         <ScrollScaleMedia>
           <PlaceholderMedia
