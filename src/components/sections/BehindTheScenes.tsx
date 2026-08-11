@@ -1,4 +1,5 @@
 import PlaceholderMedia from "@/components/PlaceholderMedia";
+import Reveal from "@/components/Reveal";
 
 const PILLARS = [
   { title: "passie", description: "[Placeholder] Gedreven door een passie voor beeldtaal en verhalen." },
@@ -21,9 +22,9 @@ export default function BehindTheScenes() {
   return (
     <section className="bg-ink text-paper">
       <div className="mx-auto max-w-6xl px-6 py-24">
-        <h2 className="heading mb-10 text-[clamp(2rem,4vw,3.5rem)]">
+        <Reveal as="h2" className="heading mb-10 text-[clamp(2rem,4vw,3.5rem)]">
           behind the scenes
-        </h2>
+        </Reveal>
 
         <div className="mb-16 grid gap-8 sm:grid-cols-2 lg:grid-cols-5">
           {PILLARS.map((pillar) => (

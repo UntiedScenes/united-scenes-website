@@ -1,4 +1,5 @@
 import PlaceholderMedia from "@/components/PlaceholderMedia";
+import Reveal from "@/components/Reveal";
 
 const LATEST_WORK = [
   { brand: "Remarkable", hashtags: ["#tech", "#productlaunch"] },
@@ -14,9 +15,9 @@ export default function LatestWork() {
   return (
     <section className="bg-neutral-100 text-ink">
       <div className="mx-auto max-w-6xl px-6 py-24">
-        <h2 className="heading mb-10 text-[clamp(2rem,4vw,3.5rem)]">
+        <Reveal as="h2" className="heading mb-10 text-[clamp(2rem,4vw,3.5rem)]">
           latest work
-        </h2>
+        </Reveal>
 
         <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
           {LATEST_WORK.map((item) => (

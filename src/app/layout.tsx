@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { clashDisplay, ttHovesDemibold, ttHovesRegular } from "./fonts";
 import DisruptCta from "@/components/DisruptCta";
+import ConsoleEasterEgg from "@/components/ConsoleEasterEgg";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -18,6 +19,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       <body className="min-h-full flex flex-col bg-paper text-ink font-text">
         {children}
         <DisruptCta />
+        <ConsoleEasterEgg />
       </body>
     </html>
   );

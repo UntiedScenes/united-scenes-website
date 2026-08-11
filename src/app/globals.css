@@ -69,3 +69,16 @@ body {
   line-height: 0.92;
   letter-spacing: -0.01em;
 }
+
+.reveal {
+  margin: -10px 0;
+  padding: 10px 0;
+  width: fit-content;
+  overflow: hidden;
+  clip-path: polygon(0% 0%, 100% 0%, 100% 50%, 0% 100%);
+}
+
+.reveal span {
+  position: relative;
+  display: block;
+}

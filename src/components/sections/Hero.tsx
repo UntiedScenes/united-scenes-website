@@ -1,4 +1,5 @@
 import PlaceholderMedia from "@/components/PlaceholderMedia";
+import Reveal from "@/components/Reveal";
 
 export default function Hero() {
   return (
@@ -17,9 +18,9 @@ export default function Hero() {
         <p className="font-subheading text-sm uppercase tracking-[0.2em] text-accent">
           Untied Scenes
         </p>
-        <h1 className="heading max-w-4xl text-[clamp(2.75rem,8vw,7rem)]">
+        <Reveal as="h1" className="heading max-w-4xl text-[clamp(2.75rem,8vw,7rem)]">
           videoproductie op hoog niveau
-        </h1>
+        </Reveal>
       </div>
     </section>
   );

@@ -1,4 +1,5 @@
 import PlaceholderMedia from "@/components/PlaceholderMedia";
+import Reveal from "@/components/Reveal";
 
 const CASES = [
   {
@@ -22,7 +23,9 @@ export default function CaseStudies() {
   return (
     <section className="bg-paper text-ink">
       <div className="mx-auto max-w-6xl px-6 py-24">
-        <h2 className="heading mb-10 text-[clamp(2rem,4vw,3.5rem)]">cases</h2>
+        <Reveal as="h2" className="heading mb-10 text-[clamp(2rem,4vw,3.5rem)]">
+          cases
+        </Reveal>
 
         <div className="grid gap-8 md:grid-cols-3">
           {CASES.map((item) => (
