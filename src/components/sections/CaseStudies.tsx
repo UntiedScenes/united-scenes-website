@@ -3,7 +3,7 @@ import PlaceholderMedia from "@/components/PlaceholderMedia";
 const CASES = [
   {
     type: "Documentaire",
-    title: "De eerste sprong",
+    title: "de eerste sprong",
     description: "[Placeholder] Documentaire over een bijzonder persoonlijk verhaal.",
   },
   {
@@ -13,30 +13,31 @@ const CASES = [
   },
   {
     type: "Vision film",
-    title: "De Skybox — Comfortzone",
+    title: "de Skybox — comfortzone",
     description: "[Placeholder] Vision film voor een vastgoedproject.",
   },
 ];
 
 export default function CaseStudies() {
   return (
-    <section className="border-b border-white/10">
+    <section className="bg-paper text-ink">
       <div className="mx-auto max-w-6xl px-6 py-24">
-        <h2 className="mb-10 text-3xl font-bold tracking-tight sm:text-4xl">
-          Cases
-        </h2>
+        <h2 className="heading mb-10 text-[clamp(2rem,4vw,3.5rem)]">cases</h2>
 
         <div className="grid gap-8 md:grid-cols-3">
           {CASES.map((item) => (
             <article key={item.title} className="space-y-3">
               <PlaceholderMedia label={item.title} />
-              <p className="text-xs font-semibold uppercase tracking-wide text-accent">
+              <p className="font-subheading text-xs uppercase tracking-wide text-secondary">
                 {item.type}
               </p>
-              <h3 className="text-lg font-semibold">{item.title}</h3>
-              <p className="text-sm text-muted">{item.description}</p>
-              <a href="#" className="inline-block text-sm font-semibold hover:underline">
-                Lees meer
+              <h3 className="font-subheading text-lg lowercase">{item.title}</h3>
+              <p className="font-text text-sm text-secondary">{item.description}</p>
+              <a
+                href="#"
+                className="inline-block font-text text-sm underline underline-offset-2 hover:text-secondary"
+              >
+                lees meer
               </a>
             </article>
           ))}

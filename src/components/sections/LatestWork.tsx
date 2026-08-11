@@ -12,25 +12,25 @@ const LATEST_WORK = [
 
 export default function LatestWork() {
   return (
-    <section className="border-b border-white/10">
+    <section className="bg-neutral-100 text-ink">
       <div className="mx-auto max-w-6xl px-6 py-24">
-        <h2 className="mb-10 text-3xl font-bold tracking-tight sm:text-4xl">
-          Latest work
+        <h2 className="heading mb-10 text-[clamp(2rem,4vw,3.5rem)]">
+          latest work
         </h2>
 
         <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
           {LATEST_WORK.map((item) => (
             <div key={item.brand} className="group space-y-3">
               <PlaceholderMedia label={item.brand} />
-              <div className="flex items-center justify-between text-sm">
-                <div className="space-x-2 text-muted">
+              <div className="flex items-center justify-between font-text text-sm">
+                <div className="space-x-2 text-secondary">
                   {item.hashtags.map((tag) => (
                     <span key={tag}>{tag}</span>
                   ))}
                 </div>
                 <a
                   href="#"
-                  className="font-semibold text-accent hover:underline"
+                  className="font-subheading text-ink underline underline-offset-2 hover:text-secondary"
                 >
                   bekijk meer
                 </a>

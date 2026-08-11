@@ -1,16 +1,7 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { clashDisplay, ttHovesDemibold, ttHovesRegular } from "./fonts";
+import DisruptCta from "@/components/DisruptCta";
 import "./globals.css";
-
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
 
 export const metadata: Metadata = {
   title: "Untied Scenes — Videoproductie op hoog niveau",
@@ -22,10 +13,11 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html
       lang="nl"
-      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
+      className={`${clashDisplay.variable} ${ttHovesDemibold.variable} ${ttHovesRegular.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col bg-background text-foreground">
+      <body className="min-h-full flex flex-col bg-paper text-ink font-text">
         {children}
+        <DisruptCta />
       </body>
     </html>
   );

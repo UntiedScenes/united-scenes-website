@@ -1,11 +1,11 @@
 import PlaceholderMedia from "@/components/PlaceholderMedia";
 
 const PILLARS = [
-  { title: "Passie", description: "[Placeholder] Gedreven door een passie voor beeldtaal en verhalen." },
-  { title: "High performance", description: "[Placeholder] Een cultuur waarin snelheid en kwaliteit samengaan." },
-  { title: "Innovatie", description: "[Placeholder] Altijd op zoek naar nieuwe technieken en formats." },
-  { title: "Team", description: "[Placeholder] Een klein, hecht team met korte lijnen." },
-  { title: "Betrouwbaarheid", description: "[Placeholder] Afspraken en deadlines die altijd worden nagekomen." },
+  { title: "passie", description: "[Placeholder] Gedreven door een passie voor beeldtaal en verhalen." },
+  { title: "high performance", description: "[Placeholder] Een cultuur waarin snelheid en kwaliteit samengaan." },
+  { title: "innovatie", description: "[Placeholder] Altijd op zoek naar nieuwe technieken en formats." },
+  { title: "team", description: "[Placeholder] Een klein, hecht team met korte lijnen." },
+  { title: "betrouwbaarheid", description: "[Placeholder] Afspraken en deadlines die altijd worden nagekomen." },
 ];
 
 const CREW = [
@@ -19,30 +19,30 @@ const CREW = [
 
 export default function BehindTheScenes() {
   return (
-    <section className="border-b border-white/10">
+    <section className="bg-ink text-paper">
       <div className="mx-auto max-w-6xl px-6 py-24">
-        <h2 className="mb-10 text-3xl font-bold tracking-tight sm:text-4xl">
-          Behind the Scenes
+        <h2 className="heading mb-10 text-[clamp(2rem,4vw,3.5rem)]">
+          behind the scenes
         </h2>
 
         <div className="mb-16 grid gap-8 sm:grid-cols-2 lg:grid-cols-5">
           {PILLARS.map((pillar) => (
             <div key={pillar.title} className="space-y-2">
-              <h3 className="text-sm font-semibold uppercase tracking-wide text-accent">
+              <h3 className="font-subheading text-sm lowercase text-accent">
                 {pillar.title}
               </h3>
-              <p className="text-sm text-muted">{pillar.description}</p>
+              <p className="font-text text-sm text-secondary">{pillar.description}</p>
             </div>
           ))}
         </div>
 
-        <h3 className="mb-8 text-xl font-semibold">Meet the crew</h3>
+        <h3 className="mb-8 font-subheading text-xl lowercase">meet the crew</h3>
         <div className="grid gap-6 sm:grid-cols-3 lg:grid-cols-6">
           {CREW.map((member) => (
             <div key={member.name} className="space-y-2 text-center">
-              <PlaceholderMedia label={member.name} aspect="aspect-square" />
-              <p className="text-sm font-semibold">{member.name}</p>
-              <p className="text-xs text-muted">{member.role}</p>
+              <PlaceholderMedia label={member.name} aspect="aspect-square" dark />
+              <p className="font-subheading text-sm">{member.name}</p>
+              <p className="font-text text-xs text-secondary">{member.role}</p>
             </div>
           ))}
         </div>
