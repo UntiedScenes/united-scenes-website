@@ -1,0 +1,21 @@
+import PlaceholderMedia from "@/components/PlaceholderMedia";
+
+const SHORTS = Array.from({ length: 9 }, (_, index) => `Short ${index + 1}`);
+
+export default function ShortsGallery() {
+  return (
+    <section className="border-b border-white/10">
+      <div className="mx-auto max-w-6xl px-6 py-24">
+        <h2 className="mb-10 text-3xl font-bold tracking-tight sm:text-4xl">
+          Shorts
+        </h2>
+
+        <div className="grid gap-4 sm:grid-cols-3 lg:grid-cols-5">
+          {SHORTS.map((short) => (
+            <PlaceholderMedia key={short} label={short} aspect="aspect-[9/16]" />
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
