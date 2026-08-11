@@ -4,6 +4,7 @@ import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
 import gsap from "gsap";
 import PlaceholderMedia from "@/components/PlaceholderMedia";
+import Logo from "@/components/Logo";
 
 const NAV_LINKS = [
   { href: "/cases", label: "cases" },
@@ -110,8 +111,8 @@ export default function SiteNav() {
         style={{ mixBlendMode: open ? "normal" : "difference" }}
       >
         <div className="relative mx-auto flex max-w-6xl items-center justify-between px-6 py-6">
-          <Link href="/" className="font-heading text-lg lowercase text-paper">
-            untied scenes
+          <Link href="/" className="text-paper">
+            <Logo className="h-5 w-auto sm:h-6" />
           </Link>
 
           <nav className="absolute left-1/2 top-1/2 hidden -translate-x-1/2 -translate-y-1/2 items-center gap-10 font-text text-sm lowercase text-paper md:flex">
