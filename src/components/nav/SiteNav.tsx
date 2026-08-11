@@ -107,7 +107,7 @@ export default function SiteNav() {
   return (
     <>
       <header ref={navRef} className="fixed inset-x-0 top-0 z-40">
-        <div className="container mx-auto flex max-w-6xl items-center justify-between py-6">
+        <div className="container relative mx-auto flex max-w-6xl items-center justify-between py-6">
           <Link
             href="/"
             className="text-paper"
@@ -116,22 +116,22 @@ export default function SiteNav() {
             <Logo className="h-5 w-auto sm:h-6" />
           </Link>
 
-          <div className="flex items-center gap-8">
-            <nav
-              className="hidden items-center gap-8 font-text text-sm lowercase text-paper md:flex"
-              style={{ mixBlendMode: open ? "normal" : "difference" }}
-            >
-              {NAV_LINKS.map((link) => (
-                <Link
-                  key={link.href}
-                  href={link.href}
-                  className="relative transition-opacity hover:opacity-70"
-                >
-                  {link.label}
-                </Link>
-              ))}
-            </nav>
+          <nav
+            className="absolute left-1/2 top-1/2 hidden -translate-x-1/2 -translate-y-1/2 items-center gap-8 font-text text-sm lowercase text-paper md:flex"
+            style={{ mixBlendMode: open ? "normal" : "difference" }}
+          >
+            {NAV_LINKS.map((link) => (
+              <Link
+                key={link.href}
+                href={link.href}
+                className="relative transition-opacity hover:opacity-70"
+              >
+                {link.label}
+              </Link>
+            ))}
+          </nav>
 
+          <div className="flex items-center gap-8">
             <div className="hidden items-center gap-6 md:flex">
               <button
                 type="button"
