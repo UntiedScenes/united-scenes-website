@@ -5,7 +5,7 @@ const SOCIALS = ["YouTube", "Instagram", "TikTok", "LinkedIn"];
 export default function SiteFooter() {
   return (
     <footer className="bg-ink text-neutral-50">
-      <div className="container mx-auto flex max-w-6xl flex-col gap-6 py-10 font-text text-sm text-secondary sm:flex-row sm:items-center sm:justify-between">
+      <div className="container flex flex-col gap-6 py-10 font-text text-sm text-secondary sm:flex-row sm:items-center sm:justify-between">
         <div className="space-y-1">
           <p>&copy; {new Date().getFullYear()} Untied Scenes. Alle rechten voorbehouden.</p>
           <p>

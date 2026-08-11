@@ -107,7 +107,7 @@ export default function SiteNav() {
   return (
     <>
       <header ref={navRef} className="fixed inset-x-0 top-0 z-40">
-        <div className="container mx-auto grid max-w-6xl grid-cols-[1fr_auto_1fr] items-center py-6">
+        <div className="container grid grid-cols-[1fr_auto_1fr] items-center py-6">
           <Link
             href="/"
             className="text-paper"

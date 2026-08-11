@@ -3,7 +3,7 @@ import Reveal from "@/components/Reveal";
 export default function Philosophy() {
   return (
     <section className="bg-paper text-ink">
-      <div className="container mx-auto grid max-w-6xl gap-10 py-24 md:grid-cols-2">
+      <div className="container grid gap-10 py-24 md:grid-cols-2">
         <Reveal as="h2" className="heading text-[clamp(2rem,5vw,4rem)]">
           waar twee werelden samenkomen
         </Reveal>
