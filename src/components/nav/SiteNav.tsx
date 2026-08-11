@@ -109,12 +109,12 @@ export default function SiteNav() {
         className="fixed inset-x-0 top-0 z-40"
         style={{ mixBlendMode: open ? "normal" : "difference" }}
       >
-        <div className="mx-auto grid max-w-6xl grid-cols-[1fr_auto_1fr] items-center px-6 py-6">
+        <div className="relative mx-auto flex max-w-6xl items-center justify-between px-6 py-6">
           <Link href="/" className="font-heading text-lg lowercase text-paper">
             untied scenes
           </Link>
 
-          <nav className="hidden items-center justify-center gap-10 font-text text-sm lowercase text-paper md:flex">
+          <nav className="absolute left-1/2 top-1/2 hidden -translate-x-1/2 -translate-y-1/2 items-center gap-10 font-text text-sm lowercase text-paper md:flex">
             {NAV_LINKS.map((link) => (
               <Link
                 key={link.href}
@@ -126,7 +126,7 @@ export default function SiteNav() {
             ))}
           </nav>
 
-          <div className="flex items-center justify-end gap-6">
+          <div className="flex items-center gap-6">
             <div className="hidden items-center gap-6 md:flex">
               <button
                 type="button"
@@ -149,7 +149,7 @@ export default function SiteNav() {
               type="button"
               onClick={() => setOpen((value) => !value)}
               aria-label={open ? "Sluit menu" : "Open menu"}
-              className="flex h-11 w-11 items-center justify-center rounded-full bg-paper text-ink md:hidden"
+              className="flex h-11 w-11 items-center justify-center rounded-full bg-paper text-ink"
             >
               {open ? <CloseIcon className="h-5 w-5" /> : <HamburgerIcon className="h-5 w-5" />}
             </button>
