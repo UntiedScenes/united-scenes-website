@@ -1,23 +1,5 @@
 import Link from "next/link";
-
-function ArrowIcon({ className = "" }: { className?: string }) {
-  return (
-    <svg
-      viewBox="0 0 16 16"
-      fill="none"
-      className={`h-4 w-4 ${className}`}
-      aria-hidden="true"
-    >
-      <path
-        d="M4 12L12 4M12 4H5M12 4V11"
-        stroke="currentColor"
-        strokeWidth="1.5"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
-    </svg>
-  );
-}
+import ArrowCircle from "@/components/ArrowCircle";
 
 export default function DisruptCta() {
   return (
@@ -26,10 +8,7 @@ export default function DisruptCta() {
       className="group fixed bottom-10 right-14 z-50 hidden items-center gap-3 rounded-full bg-accent py-4 pl-6 pr-2 font-text text-base leading-none text-ink shadow-lg lg:flex"
     >
       wanna disrupt?
-      <span className="relative flex h-11 w-11 shrink-0 items-center justify-center overflow-hidden rounded-full bg-ink">
-        <ArrowIcon className="absolute text-accent transition-transform duration-300 ease-out group-hover:translate-x-[150%] group-hover:-translate-y-[250%]" />
-        <ArrowIcon className="absolute -translate-x-[250%] translate-y-[150%] text-accent transition-transform duration-300 ease-out group-hover:translate-x-0 group-hover:translate-y-0" />
-      </span>
+      <ArrowCircle className="h-11 w-11" />
     </Link>
   );
 }

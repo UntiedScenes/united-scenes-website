@@ -5,6 +5,7 @@ import { useEffect, useRef, useState } from "react";
 import gsap from "gsap";
 import PlaceholderMedia from "@/components/PlaceholderMedia";
 import Logo from "@/components/Logo";
+import ArrowCircle from "@/components/ArrowCircle";
 
 const NAV_LINKS = [
   { href: "/cases", label: "cases" },
@@ -19,7 +20,7 @@ const SOCIALS = [
   { label: "LinkedIn", href: "https://www.linkedin.com/company/getuntied" },
 ];
 
-const LANGUAGES = ["NL", "EN", "DE"];
+const LANGUAGES = ["NL", "EN"];
 
 function HamburgerIcon({ className = "" }: { className?: string }) {
   return (
@@ -106,7 +107,7 @@ export default function SiteNav() {
   return (
     <>
       <header ref={navRef} className="fixed inset-x-0 top-0 z-40">
-        <div className="relative mx-auto flex max-w-6xl items-center justify-between px-6 py-6">
+        <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-6">
           <Link
             href="/"
             className="text-paper"
@@ -115,29 +116,30 @@ export default function SiteNav() {
             <Logo className="h-5 w-auto sm:h-6" />
           </Link>
 
-          <nav
-            className="absolute left-1/2 top-1/2 hidden -translate-x-1/2 -translate-y-1/2 items-center gap-10 font-text text-sm lowercase text-paper md:flex"
-            style={{ mixBlendMode: open ? "normal" : "difference" }}
-          >
-            {NAV_LINKS.map((link) => (
-              <Link
-                key={link.href}
-                href={link.href}
-                className="relative transition-opacity hover:opacity-70"
-              >
-                {link.label}
-              </Link>
-            ))}
-          </nav>
+          <div className="flex items-center gap-8">
+            <nav
+              className="hidden items-center gap-8 font-text text-sm lowercase text-paper md:flex"
+              style={{ mixBlendMode: open ? "normal" : "difference" }}
+            >
+              {NAV_LINKS.map((link) => (
+                <Link
+                  key={link.href}
+                  href={link.href}
+                  className="relative transition-opacity hover:opacity-70"
+                >
+                  {link.label}
+                </Link>
+              ))}
+            </nav>
 
-          <div className="flex items-center gap-6">
             <div className="hidden items-center gap-6 md:flex">
               <button
                 type="button"
                 onClick={() => setOpen(true)}
-                className="rounded-full bg-accent px-6 py-3 font-text text-sm lowercase text-ink"
+                className="group flex items-center gap-2 rounded-full bg-accent py-1.5 pl-6 pr-1.5 font-text text-sm lowercase text-ink"
               >
                 contact
+                <ArrowCircle className="h-9 w-9" />
               </button>
 
               <div className="flex items-center gap-3 font-text text-xs uppercase">
@@ -153,7 +155,7 @@ export default function SiteNav() {
               type="button"
               onClick={() => setOpen((value) => !value)}
               aria-label={open ? "Sluit menu" : "Open menu"}
-              className="flex h-11 w-11 items-center justify-center rounded-full bg-paper text-ink"
+              className="flex h-11 w-11 items-center justify-center rounded-full bg-paper text-ink xl:hidden"
             >
               {open ? <CloseIcon className="h-5 w-5" /> : <HamburgerIcon className="h-5 w-5" />}
             </button>
