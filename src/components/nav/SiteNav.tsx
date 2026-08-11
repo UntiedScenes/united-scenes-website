@@ -109,12 +109,12 @@ export default function SiteNav() {
         className="fixed inset-x-0 top-0 z-40"
         style={{ mixBlendMode: open ? "normal" : "difference" }}
       >
-        <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-6">
+        <div className="mx-auto grid max-w-6xl grid-cols-[1fr_auto_1fr] items-center px-6 py-6">
           <Link href="/" className="font-heading text-lg lowercase text-paper">
             untied scenes
           </Link>
 
-          <nav className="hidden items-center gap-10 font-text text-sm lowercase text-paper md:flex">
+          <nav className="hidden items-center justify-center gap-10 font-text text-sm lowercase text-paper md:flex">
             {NAV_LINKS.map((link) => (
               <Link
                 key={link.href}
@@ -124,32 +124,36 @@ export default function SiteNav() {
                 {link.label}
               </Link>
             ))}
+          </nav>
+
+          <div className="flex items-center justify-end gap-6">
+            <div className="hidden items-center gap-6 md:flex">
+              <button
+                type="button"
+                onClick={() => setOpen(true)}
+                className="rounded-full bg-accent px-6 py-3 font-text text-sm lowercase text-ink"
+              >
+                contact
+              </button>
+
+              <div className="flex items-center gap-3 font-text text-xs uppercase">
+                {LANGUAGES.map((lang) => (
+                  <span key={lang} className={lang === "NL" ? "text-accent" : "text-paper/60"}>
+                    {lang}
+                  </span>
+                ))}
+              </div>
+            </div>
 
             <button
               type="button"
-              onClick={() => setOpen(true)}
-              className="rounded-full bg-accent px-6 py-3 font-text text-sm lowercase text-ink"
+              onClick={() => setOpen((value) => !value)}
+              aria-label={open ? "Sluit menu" : "Open menu"}
+              className="flex h-11 w-11 items-center justify-center rounded-full bg-paper text-ink md:hidden"
             >
-              contact
+              {open ? <CloseIcon className="h-5 w-5" /> : <HamburgerIcon className="h-5 w-5" />}
             </button>
-
-            <div className="flex items-center gap-3 font-text text-xs uppercase">
-              {LANGUAGES.map((lang) => (
-                <span key={lang} className={lang === "NL" ? "text-accent" : "text-paper/60"}>
-                  {lang}
-                </span>
-              ))}
-            </div>
-          </nav>
-
-          <button
-            type="button"
-            onClick={() => setOpen((value) => !value)}
-            aria-label={open ? "Sluit menu" : "Open menu"}
-            className="flex h-11 w-11 items-center justify-center rounded-full bg-paper text-ink md:hidden"
-          >
-            {open ? <CloseIcon className="h-5 w-5" /> : <HamburgerIcon className="h-5 w-5" />}
-          </button>
+          </div>
         </div>
       </header>
 
