@@ -14,7 +14,7 @@ const LATEST_WORK = [
 export default function LatestWork() {
   return (
     <section className="bg-neutral-100 text-ink">
-      <div className="mx-auto max-w-6xl px-6 py-24">
+      <div className="container mx-auto max-w-6xl py-24">
         <Reveal as="h2" className="heading mb-10 text-[clamp(2rem,4vw,3.5rem)]">
           latest work
         </Reveal>

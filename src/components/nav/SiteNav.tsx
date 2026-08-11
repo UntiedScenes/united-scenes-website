@@ -107,7 +107,7 @@ export default function SiteNav() {
   return (
     <>
       <header ref={navRef} className="fixed inset-x-0 top-0 z-40">
-        <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-6">
+        <div className="container mx-auto flex max-w-6xl items-center justify-between py-6">
           <Link
             href="/"
             className="text-paper"
@@ -167,7 +167,7 @@ export default function SiteNav() {
 
       <div
         ref={overlayRef}
-        className="fixed inset-0 z-40 overflow-y-auto bg-accent px-6 py-24 opacity-0"
+        className="container fixed inset-0 z-40 overflow-y-auto bg-accent py-24 opacity-0"
         style={{ visibility: "hidden" }}
       >
         <button

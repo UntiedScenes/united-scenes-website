@@ -17,7 +17,7 @@ export default function Hero() {
         <div className="absolute inset-0 bg-gradient-to-t from-ink via-ink/50 to-ink/10" />
       </div>
 
-      <div className="px-6 text-center">
+      <div className="container text-center">
         <HeroHeadline />
       </div>
 
