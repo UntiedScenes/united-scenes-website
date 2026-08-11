@@ -70,6 +70,15 @@ body {
   padding-left: 40px;
 }
 
+.row {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.col {
+  padding: 16px;
+}
+
 .heading {
   font-family: var(--font-heading);
   text-transform: lowercase;
