@@ -105,17 +105,20 @@ export default function SiteNav() {
 
   return (
     <>
-      <header
-        ref={navRef}
-        className="fixed inset-x-0 top-0 z-40"
-        style={{ mixBlendMode: open ? "normal" : "difference" }}
-      >
+      <header ref={navRef} className="fixed inset-x-0 top-0 z-40">
         <div className="relative mx-auto flex max-w-6xl items-center justify-between px-6 py-6">
-          <Link href="/" className="text-paper">
+          <Link
+            href="/"
+            className="text-paper"
+            style={{ mixBlendMode: open ? "normal" : "difference" }}
+          >
             <Logo className="h-5 w-auto sm:h-6" />
           </Link>
 
-          <nav className="absolute left-1/2 top-1/2 hidden -translate-x-1/2 -translate-y-1/2 items-center gap-10 font-text text-sm lowercase text-paper md:flex">
+          <nav
+            className="absolute left-1/2 top-1/2 hidden -translate-x-1/2 -translate-y-1/2 items-center gap-10 font-text text-sm lowercase text-paper md:flex"
+            style={{ mixBlendMode: open ? "normal" : "difference" }}
+          >
             {NAV_LINKS.map((link) => (
               <Link
                 key={link.href}
