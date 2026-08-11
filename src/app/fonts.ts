@@ -1,9 +1,11 @@
 import localFont from "next/font/local";
 
 export const clashDisplay = localFont({
-  src: "./fonts/clashdisplay-bold.woff",
+  src: [
+    { path: "./fonts/clashdisplay-bold.woff", weight: "700", style: "normal" },
+    { path: "./fonts/clashdisplay-light.woff", weight: "700", style: "italic" },
+  ],
   variable: "--font-heading",
-  weight: "700",
   display: "swap",
 });
 

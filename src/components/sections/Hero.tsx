@@ -1,26 +1,36 @@
 import PlaceholderMedia from "@/components/PlaceholderMedia";
-import Reveal from "@/components/Reveal";
+import ScrollScaleMedia from "@/components/ScrollScaleMedia";
+import HeroHeadline from "@/components/HeroHeadline";
 
 export default function Hero() {
   return (
-    <section className="relative overflow-hidden bg-ink text-paper">
+    <section className="relative flex min-h-screen items-center justify-center overflow-hidden bg-ink text-paper">
       <div className="absolute inset-0 -z-10">
-        <PlaceholderMedia
-          label="Hero showreel"
-          aspect="h-full"
-          dark
-          className="h-full rounded-none border-none opacity-60"
-        />
-        <div className="absolute inset-0 bg-gradient-to-t from-ink via-ink/60 to-ink/10" />
+        <ScrollScaleMedia>
+          <PlaceholderMedia
+            label="Hero showreel"
+            aspect="h-full"
+            dark
+            className="h-full rounded-none border-none opacity-60"
+          />
+        </ScrollScaleMedia>
+        <div className="absolute inset-0 bg-gradient-to-t from-ink via-ink/50 to-ink/10" />
       </div>
 
-      <div className="mx-auto flex min-h-[85vh] max-w-6xl flex-col justify-center gap-6 px-6 py-32">
-        <p className="font-subheading text-sm uppercase tracking-[0.2em] text-accent">
-          Untied Scenes
-        </p>
-        <Reveal as="h1" className="heading max-w-4xl text-[clamp(2.75rem,8vw,7rem)]">
-          videoproductie op hoog niveau
-        </Reveal>
+      <div className="px-6 text-center">
+        <HeroHeadline />
+      </div>
+
+      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce text-paper">
+        <svg viewBox="0 0 24 24" className="h-6 w-6" fill="none" aria-hidden="true">
+          <path
+            d="M12 4v14m0 0l-6-6m6 6l6-6"
+            stroke="currentColor"
+            strokeWidth="1.5"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          />
+        </svg>
       </div>
     </section>
   );

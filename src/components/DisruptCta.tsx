@@ -23,7 +23,7 @@ export default function DisruptCta() {
   return (
     <Link
       href="/contact"
-      className="group fixed bottom-6 right-6 z-50 flex items-center gap-3 rounded-full bg-accent py-4 pl-6 pr-2 font-text text-base leading-none text-ink shadow-lg sm:bottom-10 sm:right-14"
+      className="group fixed bottom-10 right-14 z-50 hidden items-center gap-3 rounded-full bg-accent py-4 pl-6 pr-2 font-text text-base leading-none text-ink shadow-lg lg:flex"
     >
       wanna disrupt?
       <span className="relative flex h-11 w-11 shrink-0 items-center justify-center overflow-hidden rounded-full bg-ink">

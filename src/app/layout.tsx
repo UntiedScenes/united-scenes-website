@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { clashDisplay, ttHovesDemibold, ttHovesRegular } from "./fonts";
+import SiteNav from "@/components/nav/SiteNav";
 import DisruptCta from "@/components/DisruptCta";
+import Preloader from "@/components/Preloader";
 import ConsoleEasterEgg from "@/components/ConsoleEasterEgg";
 import "./globals.css";
 
@@ -17,6 +19,8 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       className={`${clashDisplay.variable} ${ttHovesDemibold.variable} ${ttHovesRegular.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col bg-paper text-ink font-text">
+        <Preloader />
+        <SiteNav />
         {children}
         <DisruptCta />
         <ConsoleEasterEgg />
