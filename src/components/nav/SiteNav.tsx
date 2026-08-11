@@ -107,7 +107,7 @@ export default function SiteNav() {
   return (
     <>
       <header ref={navRef} className="fixed inset-x-0 top-0 z-40">
-        <div className="container relative mx-auto flex max-w-6xl items-center justify-between py-6">
+        <div className="container mx-auto grid max-w-6xl grid-cols-[1fr_auto_1fr] items-center py-6">
           <Link
             href="/"
             className="text-paper"
@@ -117,7 +117,7 @@ export default function SiteNav() {
           </Link>
 
           <nav
-            className="absolute left-1/2 top-1/2 hidden -translate-x-1/2 -translate-y-1/2 items-center gap-8 font-text text-sm lowercase text-paper md:flex"
+            className="hidden items-center justify-center gap-8 font-text text-sm lowercase text-paper md:flex"
             style={{ mixBlendMode: open ? "normal" : "difference" }}
           >
             {NAV_LINKS.map((link) => (
@@ -131,7 +131,7 @@ export default function SiteNav() {
             ))}
           </nav>
 
-          <div className="flex items-center gap-8">
+          <div className="flex items-center justify-end gap-8">
             <div className="hidden items-center gap-6 md:flex">
               <button
                 type="button"
