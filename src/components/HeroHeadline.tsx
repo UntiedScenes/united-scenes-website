@@ -75,14 +75,14 @@ export default function HeroHeadline() {
     <div className="space-y-2">
       <div
         ref={staticRef}
-        className="reveal heading text-[clamp(2.5rem,7vw,5.5rem)] italic opacity-0"
+        className="reveal heading mx-auto text-[clamp(2.5rem,7vw,5.5rem)] italic opacity-0"
       >
         <span>we disrupt</span>
       </div>
 
       <div
         ref={switchRef}
-        className="reveal heading grid h-[1.15em] grid-cols-1 grid-rows-1 overflow-hidden text-[clamp(2.5rem,7vw,5.5rem)] opacity-0"
+        className="reveal heading mx-auto grid h-[1.15em] grid-cols-1 grid-rows-1 overflow-hidden text-[clamp(2.5rem,7vw,5.5rem)] opacity-0"
         style={{ verticalAlign: "bottom" }}
       >
         {WORDS.map((word, index) => (
