@@ -12,13 +12,25 @@ function ArrowIcon({ className = "" }: { className?: string }) {
   );
 }
 
-export default function ArrowCircle({ className = "" }: { className?: string }) {
+type ArrowCircleProps = {
+  className?: string;
+  tone?: "dark" | "light";
+};
+
+export default function ArrowCircle({ className = "", tone = "dark" }: ArrowCircleProps) {
+  const bg = tone === "dark" ? "bg-ink" : "bg-accent";
+  const icon = tone === "dark" ? "text-accent" : "text-ink";
+
   return (
     <span
-      className={`relative flex shrink-0 items-center justify-center overflow-hidden rounded-full bg-ink ${className}`}
+      className={`relative flex shrink-0 items-center justify-center overflow-hidden rounded-full ${bg} ${className}`}
     >
-      <ArrowIcon className="absolute text-accent transition-transform duration-300 ease-out group-hover:translate-x-[150%] group-hover:-translate-y-[250%]" />
-      <ArrowIcon className="absolute -translate-x-[250%] translate-y-[150%] text-accent transition-transform duration-300 ease-out group-hover:translate-x-0 group-hover:translate-y-0" />
+      <ArrowIcon
+        className={`absolute ${icon} transition-transform duration-300 ease-out group-hover:translate-x-[150%] group-hover:-translate-y-[250%]`}
+      />
+      <ArrowIcon
+        className={`absolute -translate-x-[250%] translate-y-[150%] ${icon} transition-transform duration-300 ease-out group-hover:translate-x-0 group-hover:translate-y-0`}
+      />
     </span>
   );
 }

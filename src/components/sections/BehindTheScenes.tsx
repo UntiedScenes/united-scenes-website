@@ -20,7 +20,7 @@ const CREW = [
 
 export default function BehindTheScenes() {
   return (
-    <section className="bg-ink text-paper">
+    <section id="behind-the-scenes" className="bg-ink text-paper">
       <div className="container py-24">
         <Reveal as="h2" className="heading mb-10 text-[clamp(2rem,4vw,3.5rem)]">
           behind the scenes

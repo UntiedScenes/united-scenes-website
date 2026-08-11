@@ -1,22 +1,35 @@
 import Reveal from "@/components/Reveal";
+import SplitFadeText from "@/components/SplitFadeText";
+import ArrowCircle from "@/components/ArrowCircle";
 
 export default function Philosophy() {
   return (
-    <section className="bg-paper text-ink">
-      <div className="container grid gap-10 py-24 md:grid-cols-2">
-        <Reveal as="h2" className="heading text-[clamp(2rem,5vw,4rem)]">
-          waar twee werelden samenkomen
-        </Reveal>
-        <div className="space-y-4 font-text text-secondary">
-          <p>
-            [Placeholder] Untied Scenes combineert de beeldtaal van bioscoopfilms met
-            de snelheid van hedendaagse, kortlopende storytelling. Geen standaard
-            videostrategie, maar beeldmateriaal dat opvalt en blijft hangen.
-          </p>
-          <p>
-            [Placeholder] Deze paragraaf wordt later vervangen door de definitieve
-            tekst en beeldmateriaal van Untied Scenes.
-          </p>
+    <section className="bg-ink text-paper">
+      <div className="container py-24 lg:py-44">
+        <div className="mx-auto w-full text-center lg:w-2/3 min-[1920px]:w-1/2">
+          <Reveal
+            as="h2"
+            className="mb-4 font-subheading text-[clamp(1.5rem,1.2rem+1.2vw,2rem)]"
+          >
+            Waar twee werelden samenkomen
+          </Reveal>
+
+          <SplitFadeText className="mb-10 text-[clamp(1.4rem,1.1rem+1.3vw,2.25rem)] leading-[1.48]">
+            Wij geloven erin dat conventionele videostrategieën niet meer werken. In
+            deze wereld roept iedereen om aandacht. Val jij nog wel genoeg op? Untied
+            Scenes combineert de stijlen en emotie van bioscoopfilms met een frisse,
+            creatieve blik op fast paced storytelling. Of het nu gaat om short form
+            content of een diepgaand merkverhaal, wij maken van iedere productie een
+            ware beleving.
+          </SplitFadeText>
+
+          <a
+            href="#behind-the-scenes"
+            className="group mx-auto inline-flex items-center gap-4 rounded-full border border-paper py-1.5 pl-8 pr-1.5 font-text text-sm lowercase text-paper transition-colors hover:bg-paper hover:text-ink"
+          >
+            lees meer
+            <ArrowCircle tone="light" className="h-9 w-9" />
+          </a>
         </div>
       </div>
     </section>
