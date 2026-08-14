@@ -127,7 +127,7 @@ export default function SiteNav() {
             className="text-paper"
             style={{ mixBlendMode: open ? "normal" : "difference" }}
           >
-            <Logo className="h-4 w-auto sm:h-5" />
+            <Logo className="h-20 w-auto" />
           </Link>
 
           <nav
