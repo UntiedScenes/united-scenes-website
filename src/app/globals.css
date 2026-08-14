@@ -640,6 +640,10 @@ body {
   margin-right: 16px;
 }
 
+.menu-4 > ul > li:last-child {
+  margin-right: 0;
+}
+
 .menu-4 > ul > li > a {
   text-transform: lowercase;
 }
