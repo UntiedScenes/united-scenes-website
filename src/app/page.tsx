@@ -1,7 +1,9 @@
 import Link from "next/link";
 import CaseCard from "@/components/CaseCard";
 import CtaSection from "@/components/CtaSection";
+import Marquee from "@/components/Marquee";
 import PlaceholderMedia from "@/components/PlaceholderMedia";
+import Reveal from "@/components/Reveal";
 import SectionIntro from "@/components/SectionIntro";
 import { featuredCases } from "@/data/cases";
 import { services } from "@/data/services";
@@ -28,14 +30,19 @@ const usps = [
 ];
 
 export default function Home() {
+  const [headlineCase, ...gridCases] = featuredCases;
+
   return (
     <>
       {/* Hero */}
-      <section className="on-dark bg-ink text-paper">
-        <div className="wrap py-24 md:py-36">
-          <p className="eyebrow text-paper/50">videoproductie — commercials, brandmovies &amp; meer</p>
-          <h1 className="heading mt-4 max-w-3xl text-4xl sm:text-6xl md:text-7xl">
-            Video die niemand wegklikt.
+      <section className="on-dark overflow-hidden bg-ink text-paper">
+        <div className="hero-rise wrap pb-16 pt-24 md:pb-24 md:pt-36">
+          <p className="eyebrow text-paper/50">
+            videoproductie — commercials, brandmovies &amp; meer
+          </p>
+          <h1 className="heading mt-4 max-w-4xl text-5xl sm:text-7xl lg:text-8xl">
+            Video die niemand <span className="text-outline">wegklikt</span>
+            <span className="text-accent">.</span>
           </h1>
           <p className="mt-6 max-w-xl text-lg text-paper/70">
             Bioscoopkwaliteit voor merken die durven op te vallen. Klein team,
@@ -50,17 +57,23 @@ export default function Home() {
             </Link>
           </div>
         </div>
+
+        <div className="border-t border-paper/10 py-6">
+          <Marquee items={services.map((service) => service.title)} />
+        </div>
       </section>
 
       {/* Intro */}
       <section>
         <div className="wrap grid gap-10 py-20 md:grid-cols-2 md:py-28">
-          <h2 className="heading text-3xl md:text-4xl">
-            Klein team.
-            <br />
-            Grote schermen.
-          </h2>
-          <div className="space-y-4 text-lg">
+          <Reveal>
+            <h2 className="heading text-3xl md:text-4xl">
+              Klein team.
+              <br />
+              Grote schermen.
+            </h2>
+          </Reveal>
+          <Reveal delay={100} className="space-y-4 text-lg">
             <p>
               Untied Scenes is een compact productieteam waarin elke schakel
               telt. Geen legers aan crew, geen tussenlagen — wel makers die
@@ -71,26 +84,29 @@ export default function Home() {
               dezelfde handen. Daarom kunnen we snel zijn zonder in te leveren
               op kwaliteit.
             </p>
-          </div>
+          </Reveal>
         </div>
       </section>
 
-      {/* Uitgelicht werk */}
+      {/* Uitgelicht werk — één grote kop-case, drie kaarten eronder */}
       <section className="border-t border-line">
         <div className="wrap py-20 md:py-28">
-          <div className="flex flex-wrap items-end justify-between gap-6">
-            <SectionIntro
-              eyebrow="uitgelicht werk"
-              title="Cases waar we trots op zijn"
-            />
+          <Reveal className="flex flex-wrap items-end justify-between gap-6">
+            <SectionIntro eyebrow="uitgelicht werk" title="Cases waar we trots op zijn" />
             <Link href="/cases" className="link-arrow">
               alle cases
             </Link>
-          </div>
+          </Reveal>
 
-          <div className="mt-12 grid gap-x-8 gap-y-14 sm:grid-cols-2">
-            {featuredCases.map((caseItem) => (
-              <CaseCard key={caseItem.slug} caseItem={caseItem} />
+          <Reveal className="mt-12">
+            <CaseCard caseItem={headlineCase} large />
+          </Reveal>
+
+          <div className="mt-14 grid gap-x-8 gap-y-14 sm:grid-cols-2 lg:grid-cols-3">
+            {gridCases.map((caseItem, index) => (
+              <Reveal key={caseItem.slug} delay={index * 90}>
+                <CaseCard caseItem={caseItem} />
+              </Reveal>
             ))}
           </div>
         </div>
@@ -99,19 +115,20 @@ export default function Home() {
       {/* USP's */}
       <section className="on-dark bg-ink text-paper">
         <div className="wrap py-20 md:py-28">
-          <SectionIntro
-            eyebrow="waarom untied scenes"
-            title="Geen poespas. Wel resultaat."
-          />
+          <Reveal>
+            <SectionIntro eyebrow="waarom untied scenes" title="Geen poespas. Wel resultaat." />
+          </Reveal>
           <div className="mt-12 grid gap-x-8 gap-y-10 sm:grid-cols-2 lg:grid-cols-4">
             {usps.map((usp, index) => (
-              <div key={usp.title} className="border-t border-paper/20 pt-5">
-                <p className="font-subheading text-sm text-accent">
-                  0{index + 1}
-                </p>
-                <h3 className="heading mt-2 text-xl">{usp.title}</h3>
+              <Reveal
+                key={usp.title}
+                delay={index * 90}
+                className="border-t border-paper/20 pt-5 transition-colors duration-300 hover:border-accent"
+              >
+                <p className="heading text-outline text-4xl">0{index + 1}</p>
+                <h3 className="heading mt-3 text-xl">{usp.title}</h3>
                 <p className="mt-3 text-sm text-paper/70">{usp.body}</p>
-              </div>
+              </Reveal>
             ))}
           </div>
         </div>
@@ -120,7 +137,7 @@ export default function Home() {
       {/* Team-teaser */}
       <section>
         <div className="wrap py-20 md:py-28">
-          <div className="flex flex-wrap items-end justify-between gap-6">
+          <Reveal className="flex flex-wrap items-end justify-between gap-6">
             <SectionIntro
               eyebrow="het team"
               title="De makers achter de camera"
@@ -129,19 +146,23 @@ export default function Home() {
             <Link href="/team" className="link-arrow">
               leer het team kennen
             </Link>
-          </div>
+          </Reveal>
 
           <div className="mt-12 grid grid-cols-2 gap-6 lg:grid-cols-4">
-            {team.map((member) => (
-              <Link key={member.name} href="/team" className="group block">
-                <PlaceholderMedia
-                  label={`foto — ${member.name}`}
-                  aspect="aspect-[3/4]"
-                  className="transition-transform duration-300 ease-out group-hover:scale-[1.02]"
-                />
-                <h3 className="heading mt-3 text-lg">{member.name}</h3>
-                <p className="text-sm text-muted">{member.role}</p>
-              </Link>
+            {team.map((member, index) => (
+              <Reveal key={member.name} delay={index * 90}>
+                <Link href="/team" className="group block">
+                  <div className="overflow-hidden">
+                    <PlaceholderMedia
+                      label={`foto — ${member.name}`}
+                      aspect="aspect-[3/4]"
+                      className="transition-transform duration-500 ease-out group-hover:scale-[1.03]"
+                    />
+                  </div>
+                  <h3 className="heading mt-3 text-lg">{member.name}</h3>
+                  <p className="text-sm text-muted">{member.role}</p>
+                </Link>
+              </Reveal>
             ))}
           </div>
         </div>
@@ -150,57 +171,71 @@ export default function Home() {
       {/* Diensten kort */}
       <section className="border-t border-line">
         <div className="wrap py-20 md:py-28">
-          <SectionIntro
-            eyebrow="wat we maken"
-            title="Van commercial tot documentaire"
-          />
-          <ul className="mt-10 divide-y divide-line border-y border-line">
-            {services.map((service) => (
-              <li key={service.slug}>
-                <Link
-                  href={`/diensten#${service.slug}`}
-                  className="group flex flex-col gap-1 py-5 sm:flex-row sm:items-baseline sm:justify-between sm:gap-8"
-                >
-                  <span className="heading text-2xl transition-colors group-hover:text-muted md:text-3xl">
-                    {service.title}
-                  </span>
-                  <span className="max-w-md text-sm text-muted sm:text-right">
-                    {service.short}
-                  </span>
-                </Link>
-              </li>
-            ))}
-          </ul>
+          <Reveal>
+            <SectionIntro eyebrow="wat we maken" title="Van commercial tot documentaire" />
+          </Reveal>
+          <Reveal className="mt-10">
+            <ul className="divide-y divide-line border-y border-line">
+              {services.map((service) => (
+                <li key={service.slug}>
+                  <Link
+                    href={`/diensten#${service.slug}`}
+                    className="group flex flex-col gap-1 py-5 sm:flex-row sm:items-baseline sm:justify-between sm:gap-8"
+                  >
+                    <span className="heading text-2xl transition-transform duration-300 ease-out group-hover:translate-x-2 md:text-3xl">
+                      {service.title}
+                      <span className="ml-3 inline-block text-accent opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+                        ↗
+                      </span>
+                    </span>
+                    <span className="max-w-md text-sm text-muted sm:text-right">
+                      {service.short}
+                    </span>
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </Reveal>
         </div>
       </section>
 
       {/* Social proof */}
       <section>
         <div className="wrap py-20 md:py-28">
-          <figure className="mx-auto max-w-3xl text-center">
-            <blockquote className="heading text-2xl md:text-4xl">
-              &ldquo;Ze beloofden een commercial die niet op de rest lijkt. Dat
-              is gelukt — en hij was er eerder dan afgesproken.&rdquo;
-            </blockquote>
-            <figcaption className="mt-6 text-sm text-muted">
-              Marketingmanager, VoltNed —{" "}
-              <Link href="/cases/voltned-commercial" className="underline hover:text-ink">
-                bekijk de case
-              </Link>
-            </figcaption>
-          </figure>
+          <Reveal>
+            <figure className="relative mx-auto max-w-3xl text-center">
+              <span
+                aria-hidden="true"
+                className="heading pointer-events-none absolute -top-14 left-1/2 -translate-x-1/2 text-[10rem] leading-none text-accent"
+              >
+                &ldquo;
+              </span>
+              <blockquote className="heading relative text-2xl md:text-4xl">
+                &ldquo;Ze beloofden een commercial die niet op de rest lijkt.
+                Dat is gelukt — en hij was er eerder dan afgesproken.&rdquo;
+              </blockquote>
+              <figcaption className="mt-6 text-sm text-muted">
+                Marketingmanager, VoltNed —{" "}
+                <Link href="/cases/voltned-commercial" className="underline hover:text-ink">
+                  bekijk de case
+                </Link>
+              </figcaption>
+            </figure>
+          </Reveal>
 
-          <p className="mt-14 text-center text-sm text-muted">
-            Vertrouwd door merken, events en artiesten in heel Nederland —
-            en altijd bereikbaar via{" "}
-            <a href={site.phoneHref} className="underline hover:text-ink">
-              {site.phone}
-            </a>
-          </p>
+          <Reveal delay={100}>
+            <p className="mt-14 text-center text-sm text-muted">
+              Vertrouwd door merken, events en artiesten in heel Nederland —
+              en altijd bereikbaar via{" "}
+              <a href={site.phoneHref} className="underline hover:text-ink">
+                {site.phone}
+              </a>
+            </p>
+          </Reveal>
         </div>
       </section>
 
-      <CtaSection />
+      <CtaSection badge />
     </>
   );
 }
