@@ -560,7 +560,11 @@ body {
 }
 
 .menu-5 > ul > li {
-  margin-right: 8px;
+  margin-right: 40px;
+}
+
+.menu-5 > ul > li:last-child {
+  margin-right: 0;
 }
 
 .menu-5 > ul > li.separator {

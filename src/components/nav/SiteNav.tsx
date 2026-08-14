@@ -121,30 +121,30 @@ export default function SiteNav() {
   return (
     <>
       <header ref={navRef} className="site-header fixed inset-x-0 top-0 z-40">
-        <div className="container grid grid-cols-[1fr_auto_1fr] items-center py-6">
+        <div className="container flex items-center justify-between py-6">
           <Link
             href="/"
             className="text-paper"
             style={{ mixBlendMode: open ? "normal" : "difference" }}
           >
-            <Logo className="h-5 w-auto sm:h-6" />
+            <Logo className="h-[20px] w-auto sm:h-[24px]" />
           </Link>
 
-          <nav
-            className="menu-5 light hidden md:flex"
-            style={{ mixBlendMode: open ? "normal" : "difference" }}
-          >
-            <ul>
-              {NAV_LINKS.map((link) => (
-                <li key={link.href}>
-                  <Link href={link.href}>{link.label}</Link>
-                </li>
-              ))}
-            </ul>
-          </nav>
+          <div className="flex items-center gap-3">
+            <nav
+              className="menu-5 light hidden xl:flex"
+              style={{ mixBlendMode: open ? "normal" : "difference" }}
+            >
+              <ul>
+                {NAV_LINKS.map((link) => (
+                  <li key={link.href}>
+                    <Link href={link.href}>{link.label}</Link>
+                  </li>
+                ))}
+              </ul>
+            </nav>
 
-          <div className="flex items-center justify-end gap-8">
-            <div className="hidden items-center gap-6 md:flex">
+            <div className="hidden items-center gap-6 xl:flex">
               <button type="button" onClick={() => setOpen(true)} className="group button-1 light">
                 contact
                 <ArrowCircle />
@@ -196,7 +196,7 @@ export default function SiteNav() {
               2952 DD Alblasserdam
             </p>
 
-            <nav className="flex flex-col gap-2 md:hidden">
+            <nav className="flex flex-col gap-2 xl:hidden">
               {NAV_LINKS.map((link) => (
                 <Link
                   key={link.href}
